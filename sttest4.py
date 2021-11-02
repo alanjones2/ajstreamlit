@@ -7,7 +7,7 @@ st.set_page_config(layout = "wide")
 df = pd.DataFrame(px.data.gapminder())
 
 
-st.header("National Statistics")
+st.header("Global Statistics")
 
 page = st.sidebar.selectbox('Select page',['Country data','Continent data']) 
 
