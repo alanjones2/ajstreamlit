@@ -2,39 +2,63 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+#########################################
+######            Model            ######
+#########################################
+
+class model():
+    def __init__(self):
+        self.year = 1952
+        self.df = pd.DataFrame(px.data.gapminder())
+        self.clist = self.df['country'].unique()
+    
+    def mainChart(self,year):
+        return px.scatter(df[df['year'] == year], 
+            x = "lifeExp", y = "gdpPercap", title = str(year),
+            color='continent',size='pop')
+    def chart(self, country, y, label):
+        return px.line(self.df[self.df['country'] == country], 
+            x = "year", y = y, title = label)
+
+
+model = model()
+
+#########################################
+######         Page layout         ######
+#########################################
+
 st.set_page_config(layout = "wide")
 
-df = pd.DataFrame(px.data.gapminder())
-
-st.dataframe(df)
-
-
-
+## Header
 st.header("Global Statistics")
 
+commentaryCol, chartCol=st.columns((1,2))
 
-year=st.slider("Year",1952,2007,1952,5)
-fig = px.scatter(df[df['year'] == year], 
-    x = "lifeExp", y = "gdpPercap", title = str(year),color='continent',size='pop')
-st.plotly_chart(fig,use_container_width = True)
+with commentaryCol:
+    caption="""See how life expectancy changes over time and in relation to GDP.
+     Move the slider to change the year to display."""
+    st.write(caption)
+    
+    ## Year Slider
+    caption="Select the year for the chart"
+    year=st.slider(caption,1952,2007,1952,5)
 
+with chartCol:
+    ## Main Chart
 
+    st.plotly_chart(model.mainChart(year), use_container_width = True)
 
+## Countries Drop down menu
 
-## Countries
-clist = df['country'].unique()
+country = st.selectbox("Select a country:", model.clist)
 
-country = st.selectbox("Select a country:",clist)
+## GDP and Population charts in columns
 col1, col2 = st.columns(2)
+
+## GDP column
 with col1:
-    fig = px.line(df[df['country'] == country], x = "year", y = "gdpPercap",title = "GDP per Capita")
-    st.plotly_chart(fig,use_container_width = True)
+    st.plotly_chart(model.chart(country, "gdpPercap","GDP per Capita"), use_container_width = True)
 
+## Population column
 with col2:
-    fig = px.line(df[df['country'] == country], 
-		    x = "year", y = "pop",title = "Population Growth")
-    st.plotly_chart(fig,use_container_width = True)
-st.dataframe(df[df['year'] == year])
-
-
-
+    st.plotly_chart(model.chart(country, "pop", "Population"), use_container_width = True)
