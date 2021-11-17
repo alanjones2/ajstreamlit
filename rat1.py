@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import numpy as np
 
-#########################################
-######            Model            ######
-
+################ Model ################
 class Model:
     def __init__(self):
         self.df = pd.DataFrame(px.data.gapminder())
@@ -25,9 +22,7 @@ class Model:
         Move the slider to change the year to display."""
     sliderCaption="Select the year for the chart"
 
-#########################################
-######            View             ######
-
+################ View  ################
 def view(model):
     st.set_page_config(layout = "wide")
 
@@ -48,5 +43,5 @@ def view(model):
     with chartCol:
         st.plotly_chart(model.chart(year), use_container_width = True)
 
-# Start
+################ Start  ################
 view(Model())
