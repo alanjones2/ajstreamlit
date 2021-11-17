@@ -11,9 +11,14 @@ class model():
         self.year = 1952
         self.df = pd.DataFrame(px.data.gapminder())
         self.clist = self.df['country'].unique()
+        self.ylist = self.df['year'].unique()
+        self.yearStart = int(self.ylist[0])
+        self.yearEnd = self.ylist[len(self.ylist)-1]
+        self.yearStep = self.ylist[1]-self.ylist[0]
+        
     
     def mainChart(self,year):
-        return px.scatter(df[df['year'] == year], 
+        return px.scatter(self.df[self.df['year'] == year], 
             x = "lifeExp", y = "gdpPercap", title = str(year),
             color='continent',size='pop')
     def chart(self, country, y, label):
@@ -41,7 +46,7 @@ with commentaryCol:
     
     ## Year Slider
     caption="Select the year for the chart"
-    year=st.slider(caption,1952,2007,1952,5)
+    year=st.slider(caption,model.yearStart,2007,1952,5)
 
 with chartCol:
     ## Main Chart
