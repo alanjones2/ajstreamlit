@@ -26,7 +26,7 @@ class Model:
 
 ################ View  ################
 def view(model):
-    st.set_page_config(layout = 'wide')
+    
 
     ## Header
     st.header(model.header)

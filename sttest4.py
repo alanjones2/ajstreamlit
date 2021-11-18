@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+
 st.set_page_config(layout = "wide")
 
 df = pd.DataFrame(px.data.gapminder())
@@ -9,7 +10,8 @@ df = pd.DataFrame(px.data.gapminder())
 
 st.header("Global Statistics")
 
-page = st.sidebar.selectbox('Select page',['Country data','Continent data']) 
+page = st.selectbox('Select page',['Country data',
+	'Continent data']) 
 
 if page == 'Country data':
 
@@ -28,7 +30,8 @@ if page == 'Country data':
 		x = "year", y = "pop",title = "Population Growth")
 	col2.plotly_chart(fig,use_container_width = True)
 
-else:
+elif page == 'Continent data':
+
 	## Continents
 	
 	contlist = df['continent'].unique()
@@ -45,3 +48,4 @@ else:
 		x = "year", y = "pop",
 		title = "Population",color = 'country')
 	col2.plotly_chart(fig)
+
