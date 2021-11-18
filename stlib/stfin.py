@@ -35,13 +35,13 @@ def run():
     stockNames = ('MSFT','GOOGL','FB','AAPL')
 
     #header
-    st.header('Stock Tracker')
+    st.header('Stock Tracker with data from yfinance')
     st.write('''Select a stock from the drop down menu, then a period over which
     you want to see the price changes. Finally, select an interval; this will adjust the 
     number of data points within the period.
     You should bear in mind that not all intervals work with all periods, for example,
     you can't use a one minute interval over a long period; if you get a blank chart 
-    try a different interval.''')
+    try a different interval or period.''')
 
     #3 dropdowns stock, period, interval
     stockCol, periodCol, intCol = st.columns(3)
@@ -63,3 +63,8 @@ def run():
         fig = getStock(stockName,period,interval)
         st.plotly_chart(fig,use_container_width = True)
 
+    
+    st.markdown('''
+        __This data is to the best of our knowledge accurate but definitely not 
+        guaranteed.__ Data supplied by _yfinance._
+    ''')
