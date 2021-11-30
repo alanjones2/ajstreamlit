@@ -54,3 +54,5 @@ def view(model):
 def run():
     view(Model())
 
+if __name__ == "__main__":
+    run()

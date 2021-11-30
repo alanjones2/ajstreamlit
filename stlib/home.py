@@ -44,3 +44,5 @@ def run():
                 another it is very much simplifying web design.""")
             st.markdown("[Read more...](https://towardsdatascience.com/rational-ui-design-with-streamlit-61619f7a6ea4)")
 
+if __name__ == "__main__":
+    run()

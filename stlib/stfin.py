@@ -35,13 +35,15 @@ def run():
     stockNames = ('MSFT','GOOGL','FB','AAPL')
 
     #header
-    st.header('Stock Tracker with data from yfinance')
-    st.write('''Select a stock from the drop down menu, then a period over which
+    st.header('Experimental Stock Tracker in Streamlit with data from yfinance')
+    st.markdown('''Select a stock from the drop down menu, then a period over which
     you want to see the price changes. Finally, select an interval; this will adjust the 
     number of data points within the period.
     You should bear in mind that not all intervals work with all periods, for example,
     you can't use a one minute interval over a long period; if you get a blank chart 
     try a different interval or period.''')
+
+    st.warning('__This app is incomplete and pretty flaky. Do NOT use it for anything serious - just look at the pretty graphs__')
 
     #3 dropdowns stock, period, interval
     stockCol, periodCol, intCol = st.columns(3)
@@ -68,3 +70,6 @@ def run():
         __This data is to the best of our knowledge accurate but definitely not 
         guaranteed.__ Data supplied by _yfinance._
     ''')
+
+if __name__ == "__main__":
+    run()

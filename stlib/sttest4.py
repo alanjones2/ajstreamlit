@@ -50,3 +50,5 @@ def run():
 			title = "Population",color = 'country')
 		col2.plotly_chart(fig)
 
+if __name__ == "__main__":
+    run()
