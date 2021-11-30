@@ -5,8 +5,6 @@ import plotly.express as px
 import yfinance as yf
 import streamlit as st
 
-
-
 def getInfo(stock):
     st = yf.Ticker(stock)
     return (st.info)
