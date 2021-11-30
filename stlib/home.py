@@ -2,6 +2,8 @@ def run():
         
     import streamlit as st
 
+    st.markdown("#### _An example of a personal web page written with Streamlit_")
+
     st.markdown("# Alan Jones")
     st.markdown("## Writer and Developer")
     st.markdown("""
@@ -13,7 +15,7 @@ def run():
         sign up for an email alert on my Medium 
         [page](https://alan-jones.medium.com/subscribe).
 
-        Below are a few articles you might find interesting...
+        Below are some articles you might find interesting...
 
     """)
 
