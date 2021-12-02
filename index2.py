@@ -37,7 +37,12 @@ for importer, modname, ispkg in pkgutil.iter_modules(package.__path__):
         m = importlib.import_module('.'+modname,'stlib')
         names.append(modname)
         modules.append(m)
-        descriptions.append(m.description)
+        # If the module has a description attribute use that in the select box
+        # otherwise use the module name
+        try:
+            descriptions.append(m.description)
+        except:
+            descriptions.append(modname)
 
 # The main app starts here
 
