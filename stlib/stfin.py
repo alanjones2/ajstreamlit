@@ -5,6 +5,8 @@ import plotly.express as px
 import yfinance as yf
 import streamlit as st
 
+description = "Stock Tracker (beta)"
+
 def getInfo(stock):
     st = yf.Ticker(stock)
     return (st.info)

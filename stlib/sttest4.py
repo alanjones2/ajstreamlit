@@ -1,3 +1,4 @@
+description = "Global Stats"
 
 
 def run():

@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+description = "Rational UI"
+
+
 ################ Model ################
 class Model:
     def __init__(self):

@@ -3,6 +3,8 @@
 ############################################
 import streamlit as st
 
+description = "template"
+
 ################ Model ################
 class Model:
    caption = "This is some text"

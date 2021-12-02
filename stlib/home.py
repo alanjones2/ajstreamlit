@@ -1,3 +1,5 @@
+description = "Personal Page (example)"
+
 def run():
         
     import streamlit as st
