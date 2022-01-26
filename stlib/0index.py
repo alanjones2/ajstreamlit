@@ -4,7 +4,9 @@ def run():
         
     import streamlit as st
 
-    st.header("""Example Streamlit apps""")
+    st.markdown("""# Example Streamlit apps from Alan Jones
+---
+    """)
     st.write("""These are a few of the Streamlit apps that I have developed as examples for articles 
     written on Medium.""")
     st.write("""You can select the individual apps from the dropdown menu on the left.
