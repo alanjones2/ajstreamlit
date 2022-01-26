@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-description = "Rational UI"
+description = """Rational UI"""
 
 
 ################ Model ################
@@ -33,6 +33,8 @@ def view(model):
 
     ## Header
     st.header(model.header)
+    st.markdown("""_See related article here:  [Rational UI Design with Streamlit]
+    (https://towardsdatascience.com/rational-ui-design-with-streamlit-61619f7a6ea4)_""")
 
     commentaryCol, spaceCol, chartCol=st.columns((2,1,6))
 
@@ -41,7 +43,7 @@ def view(model):
         with st.container():
             st.write('')
             st.write('')
-            st.write(model.description)
+            st.markdown(model.description)
         
         ## Year Slider
         st.write('')

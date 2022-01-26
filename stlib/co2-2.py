@@ -24,9 +24,14 @@ def run():
     #st.set_page_config(layout = "wide")
 
     df_co2= get_co2_data()
-
+    
     st.markdown("""
     # World CO2 emissions
+    _See related article here:  
+    [An Interactive CO2 Emissions Dashboard with Plotly and Streamlit]
+    (https://towardsdatascience.com/an-interactive-co2-emissions-dashboard-with-plotly-and-streamlit-b0bd4ae80cc8)
+    _
+    
     __The graphs below show the CO2 emissions per capita for the entire 
     world and individual countries over time.
     Select a year with the slider in the left-hand graph and countries 
@@ -39,7 +44,7 @@ def run():
 
     ---
 
-    """)
+""")
 
     col2, space2, col3 = st.columns((10,1,10))
 

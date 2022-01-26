@@ -4,7 +4,11 @@ def run():
         
     import streamlit as st
 
-    st.markdown("#### _An example of a personal web page written with Streamlit_")
+    st.markdown("""#### _An example of a personal web page written with Streamlit_""")
+
+    st.markdown("""See related article here: [Build a Personal Webpage with Streamlit]
+    (https://medium.com/geekculture/build-a-promotional-webpage-with-streamlit-4088b87354d2)
+    """)
 
     st.markdown("# Alan Jones")
     st.markdown("## Writer and Developer")
