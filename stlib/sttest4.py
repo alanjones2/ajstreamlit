@@ -11,6 +11,9 @@ def run():
 
 
 	st.header("Global Statistics")
+	st.markdown("""See related article here: [A Multi-page Interactive Dashboard with Streamlit and Plotly]
+    (https://towardsdatascience.com/a-multi-page-interactive-dashboard-with-streamlit-and-plotly-c3182443871a)
+    """)
 
 	page = st.radio('Select page',['Country data',
 		'Continent data']) 
